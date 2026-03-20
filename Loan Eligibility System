@@ -1,0 +1,23 @@
+def check_loan_eligibility(salary, credit_score, employment_duration):
+"""Evaluates loan application based on three criteria."""
+
+cond1 = salary >= 3000
+cond2 = credit_score >= 650
+cond3 = employment_duration >= 2
+
+satisfied_count = sum([cond1, cond2, cond3])
+
+if satisfied_count == 3:
+return "approved"
+elif satisfied_count == 2:
+return "conditional approval"
+else:
+return "rejected"
+
+salary = float(input("Masukkan gaji: "))
+credit_score = int(input("Masukkan credit score: "))
+employment_duration = int(input("Masukkan lama kerja (tahun): "))
+
+result = check_loan_eligibility(salary, credit_score, employment_duration)
+
+print("Hasil:", result)
