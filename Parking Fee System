@@ -1,0 +1,22 @@
+def hitung_biaya_parkir(jenis, jam):
+    jenis = jenis.lower()
+
+    if jenis == "motorcycle":
+        awal, tambahan = 1, 0.5
+    elif jenis == "car":
+        awal, tambahan = 2, 1
+    elif jenis == "bus":
+        awal, tambahan = 3, 2
+    else:
+        return "Jenis kendaraan tidak valid"
+
+    if jam <= 1:
+        return awal
+    else:
+        return awal + (jam - 1) * tambahan
+
+jenis = input("Jenis kendaraan: ")
+jam = float(input("Jam parkir: "))
+
+biaya = hitung_biaya_parkir(jenis, jam)
+print("Total biaya:", biaya)
